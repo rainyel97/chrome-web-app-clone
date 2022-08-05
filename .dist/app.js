@@ -1,29 +1,26 @@
-const title = document.querySelector("div.hello:first-child h1");
-//console.log(title);
-function clickListener() {
-    alert("title was clicked!");
+
+const body = document.body;
+function resizeEventListener() {
+    const innerWidth = window.innerWidth;
+    const gold = "windowGold";
+    const deepskyblue = "windowDeepskyblue";
+    const blueviolet = "windowBlueviolet";
+    if(innerWidth > 1000) {
+        body.classList.add(gold);
+        body.classList.remove(deepskyblue);
+        body.classList.remove(blueviolet);
+    }//폭이 제일 넓을 때
+    else if(innerWidth < 600){
+        body.classList.add(deepskyblue);
+        body.classList.remove(gold);        
+        body.classList.remove(blueviolet);
+    }//폭이 제일 좁을 떄
+    else{
+        body.classList.add(blueviolet);
+        body.classList.remove(deepskyblue);
+        body.classList.remove(gold);
+    }//중간 폭을 가질 때
 }
 
-function mouseent() {
-    title.style.color = "blue";
-    title.innerText = "mouse is here!";
-}
+window.addEventListener("resize", resizeEventListener);
 
-function mouseleav() {
-    title.style.color = "red";
-    title.innerText = "mouse is out!";
-}
-
-function handleWinodwResize() {
-    document.body.style.backgroundColor = "orange";
-}
-
-
-title.onclick = clickListener;
-title.onmouseenter = mouseent;
-title.onmouseleave = mouseleav;
-
-window.addEventListener("resize", handleWinodwResize);
-window.addEventListener("copy", () => {
-    alert("you can't copy");
-});
