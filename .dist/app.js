@@ -1,4 +1,3 @@
-
 const body = document.body;
 function resizeEventListener() {
     const innerWidth = window.innerWidth;
@@ -14,7 +13,7 @@ function resizeEventListener() {
         body.classList.add(deepskyblue);
         body.classList.remove(gold);        
         body.classList.remove(blueviolet);
-    }//폭이 제일 좁을 떄
+    }//폭이 제일 좁을 때 
     else{
         body.classList.add(blueviolet);
         body.classList.remove(deepskyblue);
