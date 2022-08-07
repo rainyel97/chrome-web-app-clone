@@ -1,25 +1,21 @@
-const body = document.body;
-function resizeEventListener() {
-    const innerWidth = window.innerWidth;
-    const gold = "windowGold";
-    const deepskyblue = "windowDeepskyblue";
-    const blueviolet = "windowBlueviolet";
-    if(innerWidth > 1000) {
-        body.classList.add(gold);
-        body.classList.remove(deepskyblue);
-        body.classList.remove(blueviolet);
-    }//폭이 제일 넓을 때
-    else if(innerWidth < 600){
-        body.classList.add(deepskyblue);
-        body.classList.remove(gold);        
-        body.classList.remove(blueviolet);
-    }//폭이 제일 좁을 때 
-    else{
-        body.classList.add(blueviolet);
-        body.classList.remove(deepskyblue);
-        body.classList.remove(gold);
-    }//중간 폭을 가질 때
+//const loginForm = document.querySelector("#login-form"); // #을 붙여서 id를 찾는것을 명시
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+
+function btnClick() {
+    alert(loginInput.value);
+    console.log("clicked");
 }
 
-window.addEventListener("resize", resizeEventListener);
+loginButton.addEventListener("click" , btnClick );
+
+
+const map = new Map();
+
+map.set('key','value');
+map.set('key2','value2');
+
+console.log(map);
+console.log(map.size);
+
 
