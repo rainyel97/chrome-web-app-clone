@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <title>momentum app</title>
 </head>
-<body>
-    <div id="login-form">
-        <input type="text" placeholder="What is your name?" />
-        <button>Log In</button>
-    </div>    
+<body>    
+    <h1>Random Number Game</h1>
+    <div class="secondLine">
+        <label class="bold" style="font-size: large;">Generate a number between 0 and</label>
+        <input type="number" >    
+    </div>
+    <div class="thirdLine">
+        <label>Guess the number:</label>
+        <input type="number" >
+        <button>Play!</button>    
+    </div>
+    <div class="hidden choseAndMachine"></div>
+    <div class="bold hidden result"></div>
     <script src="app.js"></script>
 </body>
 </html>

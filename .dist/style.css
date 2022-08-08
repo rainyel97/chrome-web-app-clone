@@ -1,14 +1,11 @@
-h1 {
-    color:white;
-}
-.windowDeepskyblue {
-    background-color:deepskyblue;
+.hidden {
+    display: none;
 }
 
-.windowBlueviolet {
-    background-color:blueviolet;
+.secondLine {
+    padding-bottom: 20px;
 }
 
-.windowGold {
-    background-color:gold;
+.bold {
+    font-weight: bold;
 }

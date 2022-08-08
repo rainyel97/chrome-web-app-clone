@@ -1,21 +1,25 @@
-//const loginForm = document.querySelector("#login-form"); // #을 붙여서 id를 찾는것을 명시
-const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const hidden_Value = "hidden";
+const MAX_NUM = document.querySelector(".secondLine input");
+const CHOOSE_NUM = document.querySelector(".thirdLine input");
 
-function btnClick() {
-    alert(loginInput.value);
-    console.log("clicked");
+const playButton = document.querySelector(".thirdLine button")
+const choseAndMachine = document.querySelector(".choseAndMachine")
+const result = document.querySelector(".result");
+
+function numberSubmit(event) {
+    event.preventDefault();
+    const maxNum = parseInt(MAX_NUM.value);
+    const chooseNum = parseInt(CHOOSE_NUM.value);
+    const machineNum = Math.ceil(Math.random() * maxNum);
+    choseAndMachine.innerText = `You chose: ${chooseNum},the machine chose: ${machineNum}`;
+    
+    if(chooseNum === machineNum) {
+        result.innerText = "You won!";
+    } else {
+        result.innerText = "You lost!"
+    }
+    choseAndMachine.classList.remove(hidden_Value);
+    result.classList.remove(hidden_Value);
 }
 
-loginButton.addEventListener("click" , btnClick );
-
-
-const map = new Map();
-
-map.set('key','value');
-map.set('key2','value2');
-
-console.log(map);
-console.log(map.size);
-
-
+playButton.addEventListener("click" , numberSubmit);
