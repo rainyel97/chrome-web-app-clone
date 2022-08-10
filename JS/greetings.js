@@ -1,25 +1,30 @@
-const hidden_Value = "hidden";
-const MAX_NUM = document.querySelector(".secondLine input");
-const CHOOSE_NUM = document.querySelector(".thirdLine input");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-const playButton = document.querySelector(".thirdLine button")
-const choseAndMachine = document.querySelector(".choseAndMachine")
-const result = document.querySelector(".result");
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
-function numberSubmit(event) {
-    event.preventDefault();
-    const maxNum = parseInt(MAX_NUM.value);
-    const chooseNum = parseInt(CHOOSE_NUM.value);
-    const machineNum = Math.ceil(Math.random() * maxNum);
-    choseAndMachine.innerText = `You chose: ${chooseNum},the machine chose: ${machineNum}`;
-    
-    if(chooseNum === machineNum) {
-        result.innerText = "You won!";
-    } else {
-        result.innerText = "You lost!"
-    }
-    choseAndMachine.classList.remove(hidden_Value);
-    result.classList.remove(hidden_Value);
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem("username", username);
+  localStorage.setItem(USERNAME_KEY, username);
+  paintGreetings(username);
 }
 
-playButton.addEventListener("click" , numberSubmit);
+function paintGreetings(username) {
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+  paintGreetings(savedUsername);
+}

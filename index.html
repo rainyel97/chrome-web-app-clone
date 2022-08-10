@@ -8,19 +8,17 @@
     <title>momentum app</title>
 </head>
 <body>    
-    <h1>Random Number Game</h1>
-    <div class="secondLine">
-        <label class="bold" style="font-size: large;">Generate a number between 0 and</label>
-        <input type="number" >    
-    </div>
-    <div class="thirdLine">
-        <label>Guess the number:</label>
-        <input type="number" >
-        <button>Play!</button>    
-    </div>
-    <div class="hidden choseAndMachine"></div>
-    <div class="bold hidden result"></div>
-    <script src="js/greetings.js"></script>
-    <script src="js/clock.js"></script>
+    <form class="hidden" id="login-form">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <input type="submit" value="Log In" />
+    </form>
+    <h1>Time Until Christmas Eve</h1>
+    <h2 id="clock">00:00</h2>
+    <script src="JS/clock.js"></script>
 </body>
 </html>
