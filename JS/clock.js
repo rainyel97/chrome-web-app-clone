@@ -9,7 +9,7 @@ function showTime() {
     const Hour = String(date.getHours() % 12);
     const Minute = String(date.getMinutes());
     const Second = String(date.getSeconds());
-    clock.innerText = `PM ${Hour} : ${Minute.padStart(
+    clock.innerText = `PM ${Hour.padStart(2, "0")} : ${Minute.padStart(
       2,
       "0"
     )} : ${Second.padStart(2, "0")}`;
@@ -19,7 +19,7 @@ function showTime() {
     const Hour = String(date.getHours());
     const Minute = String(date.getMinutes());
     const Second = String(date.getSeconds());
-    clock.innerText = `AM ${Hour} : ${Minute.padStart(
+    clock.innerText = `AM ${Hour.padStart(2, "0")} : ${Minute.padStart(
       2,
       "0"
     )} : ${Second.padStart(2, "0")}`;
