@@ -5,10 +5,29 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  margin-top: 20px;
 }
-
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: black;
+}
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+  text-shadow: -1px -1px 1px #aaa, 0px 2px 1px rgba(0, 0, 0, 0.5),
+    4px 4px 5px rgba(0, 0, 0, 0.7), 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+.inputcss {
+  padding: 10px 10px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+#quote {
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
 .bold {
   font-weight: bold;
 }
@@ -22,5 +41,15 @@ body {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 80%;
+  opacity: 90%;
+  object-fit: cover;
+}
+
+.weatherAPI {
+  position: absolute;
+  background-color: aliceblue;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  top: 10px;
+  right: 30px;
 }
