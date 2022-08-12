@@ -11,6 +11,7 @@ body {
 h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: black;
+  margin-bottom: 50px;
 }
 h2 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -27,6 +28,10 @@ h2 {
 #quote {
   margin-bottom: 20px;
   font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  bottom: 10px;
+  text-shadow: -1px -1px 1px #aaa, 0px 1px 1px rgba(0, 0, 0, 0.5),
+    2px 2px 3px rgba(0, 0, 0, 0.7), 0px 0px 3px rgba(0, 0, 0, 0.4);
 }
 .bold {
   font-weight: bold;
